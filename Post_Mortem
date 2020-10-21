@@ -1,0 +1,28 @@
+Project 3 - Group 3
+Post Mortem - Jonathan Park
+
+Project 3 was a great project and it was a really nice way to end the class utilizing all of the different aspects of class material necessary to complete the project.
+Moreover, it was a personal goal of mine to learn how to deploy a trading bot and I am very pleased that I had the opportunity to work on it during the class.
+
+The project began when Kalen Asberry approached me with the trading bot idea. By the first day of class project time, our group was in productive discussion about the direction
+and goals of the project. We were all in agreement that we could spend years trying to develop a successful trading algorithm. Instead, we were more interested in learning how
+to deploy a simple trading algorithm to a cloud service like AWS. 
+
+My research began mainly on the documentation page of Alpaca. We knew early on that we could theoretically use Alpaca's API trading feature in conjunction with AWS to achieve our
+project goals. Alpaca itself provides a wealth of documentation and sample code. Additionally, there are many public github repositories featuring sample trading algorithms. Lack
+of data was not a problem in this project. Kalen also found several articles from Medium.com that not only provided a guide to deploying a trading algorithm to the cloud, but also
+provided sample trading algorithms as well. 
+
+I ended up using a combination of several of these sources. I had the luxury of running each code in Jupyter Lab to verify the algorithm was working. The final code used for the
+project was titled smaenv.py and it uses a simple moving average crossover strategy. 
+
+Once we were able to show that the crossover algorithm was working in Jupyter Lab, we then turned out sights onto AWS. Kalen was able to figure out how to create an EC2 virtual
+machine instance and also how to connect to it through GitBash.
+
+Subsequently, I was able to use Gitbash to upload our files to AWS EC2. This would be the "key pair" from AWS EC2 (project3.pem) and my .env file holding my Alpaca API keys.
+
+Surprisingly, we got stuck here for quite a long time because our EC2 instance was not executing our code. We realized that our Python environment inside the EC2 instance was a
+previous version that needed to be updated. We also realized that we would need to install all of the Python packages our trading algorithm code was using.
+
+With only a couple class periods left, I was able to get the algorithm to run on EC2 by using the code "Python3 smaenv.py" and see that transactions were being made through my
+Alpaca paper trading dashboard. 
